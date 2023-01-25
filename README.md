@@ -61,5 +61,4 @@ First you need to install install these npm packages and how below its how to in
     }
    ```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
