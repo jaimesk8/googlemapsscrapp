@@ -1,0 +1,36 @@
+https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/forms
+
+create table pesquisa ( 
+    id_pesquisa int not null auto_increment,
+    name varchar(25), 
+    primary key (id_pesquisa)
+);
+
+create table jobs (
+    id_job int not null auto_increment,
+    id_pesquisa int not null, 
+    date date, 
+    primary key(id_job), 
+    constraint fk_datas 
+    foreign key(id_pesquisa) references pesquisa(id_pesquisa));
+
+
+create table datas (
+    id int not null auto_increment,
+    name varchar(25),
+    id_job int,
+    avg_rating varchar(50), 
+    reviews varchar(50), 
+    address varchar(255), 
+    description varchar(255), 
+    website varchar (255), 
+    category varchar (255), 
+    phone_num varchar(50), 
+    extra_services varchar(255), 
+    latitude varchar(20), 
+    longitude varchar(20),
+    scrapdate date,
+    primary key(id),
+    foreign key (id_job) references jobs(id_job));
+
+

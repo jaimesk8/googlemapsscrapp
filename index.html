@@ -1,0 +1,155 @@
+<html lang="en">
+<head>
+    <meta charset="urf-8">
+    <title>Scrapp</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+       
+       * {
+          box-sizing: border-box;
+        }
+        
+        .row {
+          margin-left:-5px;
+          margin-right:-5px;
+        }
+          
+        .column {
+          float: left;
+          width: 50%;
+          padding: 5px;
+        }
+        
+        /* Clearfix (clear floats) */
+        .row::after {
+          content: "";
+          clear: both;
+          display: table;
+        }
+        
+        table {
+          border-collapse: collapse;
+          border-spacing: 0;
+          width: 100%;
+          border: 1px solid #ddd;
+        }
+        
+        th, td {
+          text-align: left;
+          padding: 16px;
+        }
+        
+        tr:nth-child(even) {
+          background-color: #f2f2f2;
+        }
+
+        body {
+  font-family: 'Helvetica Neue Light', sans-serif;
+  /*background-image: url("/Users/jaimemarinho/Google Maps Scrapp Final/src/img/img3.jpg");*/
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+
+.containermain{
+  position:absolute;
+  background-color:rgb(255, 255, 255);
+  border-radius: 10px;
+  top: 10%;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+* {
+  box-sizing: border-box;
+}
+.row {
+  margin-left:-5px;
+  margin-right:-5px;
+  margin-top: 15%;
+}
+  
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 16px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+
+</style>
+</head>
+<body>
+
+    <main class="page">
+        <div class="containermain">
+          <div class="text">
+          <p><p class="places">Search for, </p>
+            <span class="word wisteria">Caffe</span>
+            <span class="word belize">Hostel</span>
+            <span class="word pomegranate">Bike rent</span>
+            <span class="word green">Pizzaria</span>
+            <span class="word midnight">Bakery</span>
+          </p>
+          </div>
+          <div id="form" action="/results" class="container"> 
+            <form id="form" method="post">
+            <input id="search" name="searchforthis" type="text" placeholder="Try 'Caffe, Rome Italy'">
+            <button type="submit" id="postid" class="button" name="num1">search</button>
+          <!--  <ul class="drop"></ul></form> -->
+          </div>
+        </div>
+        <a href="http://github.com/jaimeks8">Did you love this project? Support us</a>
+        <button id="getdata" class="button" type="submit" name="num1">selectData</button>
+    </main>
+
+    <div class="row">
+        <div class="column">
+          <table id="data-output"><h3>Pizzaria 24-01-2023</h3>
+            <tr>
+              <th>ID_job</th>
+              <th>Job date</th>
+              <th>name</th>
+              <th>avg_rating</th>
+            </tr>
+     </table>
+   </div><!--Div column-->
+   
+   <div class="column">
+    <table id="data-output1"><h3>Pizzaria 15-01-2023</h3>
+      <tr>
+        <th>ID_job</th>
+        <th>date</th>
+        <th>name</th>
+        <th>avg_rating</th>
+      </tr>
+</table>
+</div><!--Div column-->
+  </div><!--Div row-->
+  <!--Loading spinner-->
+  <div hidden id="spinner"></div>
+  <script src="src/app.js"></script>
+</body>
+</html>
