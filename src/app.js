@@ -21,18 +21,23 @@ getBtn.addEventListener('click', getInfo);
 const postBtn = document.getElementById('postid');
 postBtn.addEventListener('click', postInfo)
 
+//get elements hidden
+const spinner = document.getElementById("spinner");
+const coluna = document.getElementById("coluna");
 
-//function get data 
+const feedDisplay = document.querySelector("#data-output") //getelement by id
+const feedDisplay1 = document.querySelector("#data-output1") //getelement by id
+const feedDisplay2 = document.querySelector("#data-output2") //getelement by id
+
+        //function get data 
 function getInfo(e){
     //prevent to refesh the page
     e.preventDefault()
+    //remove the load 
+    spinner.removeAttribute('hidden');
+    coluna.removeAttribute('hidden');
 
-        const feedDisplay = document.querySelector("#data-output") //getelement by id
-        const feedDisplay1 = document.querySelector("#data-output1") //getelement by id
-        const feedDisplay2 = document.querySelector("#data-output2") //getelement by id
-        const feedDisplay3 = document.querySelector("#data-output3") //getelement by id
         // Here the value is stored in variable. 
-
         //table rating 
         fetch('http://127.0.0.1:3000/table/rating')
         .then(response => {return response.json()})
@@ -45,6 +50,7 @@ function getInfo(e){
                                 </tr>`;
                     //inject this into the div
                     feedDisplay.insertAdjacentHTML("beforeend", article)
+                    spinner.setAttribute('hidden', '');
                 })// data
                 console.log(data)
             })  //then data
@@ -62,7 +68,7 @@ function getInfo(e){
                                 </tr>`;
                     //inject this into the div
                     feedDisplay1.insertAdjacentHTML("beforeend", article)
-                    
+                    spinner.setAttribute('hidden', '');
                 })// data
                 console.log(data)
             })  //then data
@@ -76,7 +82,6 @@ e.preventDefault()
 //remove the load 
 spinner.removeAttribute('hidden');
 
-const feedDisplay = document.querySelector("#data-output") //getelement by id
 // Here the value is stored in variable. 
 var x = $("#search").val();
 console.log(x)
@@ -109,13 +114,12 @@ fetch('http://127.0.0.1:3000/results',options)//,options)
                                 <p>` + element.longitude + `</p>
                                 </div>`;
             //inject this into the div
-            feedDisplay.insertAdjacentHTML("beforeend", article)
+            feedDisplay2.insertAdjacentHTML("beforeend", article)
             spinner.setAttribute('hidden', '');
+            coluna.setAttribute('hidden', '');
             console.log(data)
         })// data
     })  //then data
 .catch(err => console.log(err)) 
 
 }//post info 
-
-
