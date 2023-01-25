@@ -66,7 +66,7 @@
 .row {
   margin-left:-5px;
   margin-right:-5px;
-  margin-top: 15%;
+  margin-top: 20%;
 }
   
 .column {
@@ -125,7 +125,7 @@ tr:nth-child(even) {
         <button id="getdata" class="button" type="submit" name="num1">selectData</button>
     </main>
 
-    <div class="row">
+    <div hidden id="coluna" class="row">
         <div class="column">
           <table id="data-output"><h3>Pizzaria 24-01-2023</h3>
             <tr>
@@ -148,6 +148,9 @@ tr:nth-child(even) {
 </table>
 </div><!--Div column-->
   </div><!--Div row-->
+  <!--Loading spinner-->
+  <div hidden id="spinner"></div>
+  <div id="data-output2"> </div>
   <!--Loading spinner-->
   <div hidden id="spinner"></div>
   <script src="src/app.js"></script>
