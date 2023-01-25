@@ -16,12 +16,12 @@ app.use(express.static('public'))
 
 
 app.get('/table/rating', (req,res) => {
-  executaSQL1('select jobs.id_job, jobs.date, datas.name, datas.avg_rating from jobs inner join datas on jobs.id_job=datas.id_job where jobs.id_job=datas.id_job and jobs.date like "2023-01-24"',res);
+  executaSQL1('select jobs.id_job, jobs.date, datas.name, datas.avg_rating from jobs inner join datas on jobs.id_job=datas.id_job where jobs.id_job=datas.id_job and jobs.date like "2023-01-24" order by datas.avg_rating desc',res);
   //executaSQL('SELECT id, name, avg_rating, reviews, address, description FROM datas where avg_rating between 1 and 5 order by avg_rating desc limit 5', res);
 });
 
 app.get('/table/ratingorder', (req,res) => {
-  executaSQL1('select jobs.id_job, jobs.date, datas.name, datas.avg_rating from jobs inner join datas on jobs.id_job=datas.id_job where jobs.id_job=datas.id_job and jobs.date like "2023-01-15"',res);
+  executaSQL1('select jobs.id_job, jobs.date, datas.name, datas.avg_rating from jobs inner join datas on jobs.id_job=datas.id_job where jobs.id_job=datas.id_job and jobs.date like "2023-01-15" order by datas.avg_rating desc',res);
 });
 
 
