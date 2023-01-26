@@ -252,9 +252,9 @@ function executaSQL(sqlQry, res){
   const connection = mysql.createConnection({
       host: "localhost",
       port: 3306,
-      user: "root",
-      password: "root",
-      database: "graph"
+      user: "YOURUSERNAME", //change 
+      password: "YOURPASSWORD", //change 
+      database: "YOURDATABASE" //change 
   });
 
   connection.query(sqlQry, (error, results, fields) => {
