@@ -29,7 +29,7 @@ First you need to install install these npm packages and how below its how to in
   npm install cors
   ```
 
-### Installation
+### Starting
 1. Start node in your project folder
    ```sh
    npm init
