@@ -90,10 +90,9 @@ app.post('/results', (req,res) => {
         var scrapdate = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate(); //+ element.avg_rating; 
     
         //add data to datas table
-        executaSQL(`INSERT INTO datas (id,name,id_job,avg_rating,reviews,address,description,website,category,
-        phone_num,extra_services,latitude,longitude,scrapdate) VALUES ("${ id }","${ name }",(select max(id_job) from jobs),"${ avg_rating }","${ reviews }","${ address }","${ description }",
-        "${ website }","${ category }","${ phone_num }","${ extra_services }","${ latitude }","${ longitude }"),"${ scrapdate }")`, res) 
-  })//foreach
+      executaSQL(`INSERT INTO datas (id,name,id_job,avg_rating,reviews,address,description,website,category,
+      phone_num,extra_services,latitude,longitude,scrapdate) VALUES ("${ id }","${ name }",(select max(id_job) from jobs),"${ avg_rating }","${ reviews }","${ address }","${ description }",
+      "${ website }","${ category }","${ phone_num }","${ extra_services }","${ latitude }","${ longitude }","${ scrapdate }")`, res) 
     console.log("Added to table datas!")
     //console.log("Final data", finalData);
     res.json(finalData);
