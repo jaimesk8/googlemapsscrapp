@@ -10,7 +10,7 @@ To get a local copy up and running follow these simple example steps, and its im
 
 ### Prerequisites
 
-First you need to install install these npm packages in our pro ject folder.
+First you need to install install these npm packages in our project folder.
 
 * npm puppeteer
   ```sh
